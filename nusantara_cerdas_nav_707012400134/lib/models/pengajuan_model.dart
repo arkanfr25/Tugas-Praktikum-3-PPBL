@@ -1,0 +1,17 @@
+
+import 'package:flutter/foundation.dart';
+
+class PengajuanModel extends ChangeNotifier {
+  final List<String> _daftarPengajuan = [];
+
+  List<String> get daftarPengajuan =>
+      List.unmodifiable(_daftarPengajuan);
+
+  int get totalPengajuan => _daftarPengajuan.length;
+
+  void ajukan(String namaLayanan) {
+    _daftarPengajuan.add(namaLayanan);
+    notifyListeners();
+  }
+}
+
